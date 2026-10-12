@@ -32,18 +32,23 @@ import React from "react";
 //         "Samsung s23 Ultra": 1400
 // };
 
-let products = [
-        `iPhone14`, `iPhone15`, `Samsung S23 Ultra`
-];
+let products = {
+        "iPhone": 1000,
+        "iPhone 15": 1200,
+        "Samsung s23 Ultra": 1400
+};
 
 // uloga prpova = jeste da vi prosledite neku dodatnu vrednost komponenti
 // pdv za proizvod
 //     hvatanje (props)
-function Products() {
+function Products(props) {
+        console.log(props.tax)
         // console.log(props.tax)
     return (
        <>
-        
+        { Object.entries(products).map( ([phone, price]) => (
+                <p>{ phone }, price with tax: ${ calculateTax(price, props.tax) }</p>
+        )) }
         {/* { Object.entries(products).map( ([phone,price]) => (
                 <p>{ phone }, price: ${ price }</p>
         )) } */}
@@ -80,7 +85,9 @@ function Products() {
    );
 }
 
-
+function calculateTax(price, tax) {
+        return (( price * tax) / 100 ) + price
+}
 
 // function calculateTax(price:number, tax:number):number {
 //         return ((price * tax) / 100) + price
