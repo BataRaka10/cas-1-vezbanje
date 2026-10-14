@@ -47,7 +47,7 @@ function Products(props) {
     return (
        <>
         { Object.entries(products).map( ([phone, price]) => (
-                <p>{ phone }, price with tax: ${ calculateTax(price, props.tax) } </p>
+                <p>{ phone }, with tax: ${ calculateTax(price, props.tax) }</p>
         )) }
         {/* { Object.entries(products).map( ([phone,price]) => (
                 <p>{ phone }, price: ${ price }</p>
@@ -86,7 +86,7 @@ function Products(props) {
 }
 
 function calculateTax(price, tax) {
-        return ((price * tax) / 100 ) + price 
+        return ((price * tax) / 100 ) + price
 }
 
 // function calculateTax(price:number, tax:number):number {
