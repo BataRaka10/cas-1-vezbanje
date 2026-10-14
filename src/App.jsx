@@ -18,9 +18,9 @@ let paragraphColor = "red";
 function App() {
     return (
         <>
-            <p className="paragraph">pozdrav { name }</p>
+            <p className="paragraph">Pozdrav ja se zovem { name }</p>
             <img src={ sajtLogo } alt="" />
-            <p style={{color: paragraphColor}}>prvi React app</p>
+            <p style={{color: paragraphColor}}>Prvi React app</p>
             < Products tax="20"/>
             < Products tax="25"/>
             < Products tax="55"/>
